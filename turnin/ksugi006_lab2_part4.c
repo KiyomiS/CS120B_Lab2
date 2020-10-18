@@ -25,19 +25,22 @@ int main(void) {
     /* Insert your solution below */
     while (1) {
 	
-	totWeight = PINA + PINB + PINC;
-	totWeight = totWeight & 0xFC;
-	
-	tmp = totWeight;
+	totWeight = 0;
+	difWeight = 0;
+	tmp = 0;
 
-	if(totWeight > 0x8C){
-		tmp = tmp + 0x01; //setting PD0 to 1 if > 140
+	totWeight = PINA + PINB + PINC;
+	tmp  = totWeight & 0xFC;
+	
+
+	if(totWeight > 140){
+		tmp = tmp | 0x01; //setting PD0 to 1 if > 140
 	}
 
-	difWeight = PINA - PINC + 50;
+	difWeight = PINA - PINC;
 
-	if((difWeight < 0x00) || (difWeight > 0x64)){
-		tmp = tmp + 0x02; //setting PD1 to 1 if inbetween 50 and -50
+	if((difWeight >= 80)){
+		tmp = tmp | 0x02; //setting PD1 to 1 if inbetween 50 and -50
 	}
 
 	PORTD = tmp;

@@ -30,9 +30,9 @@ tests = [ {'description': 'PINA: 0x00 PINB: 0x00 PINC: 0x00 => PORTC: 00000000 =
         'steps': [{'inputs': [('PINA', 0x28), ('PINB', 0x32), ('PINC', 0x28)], 'iterations': 1} ],
         'expected': [('PORTD', 0x80)],
         },
-        {'description': 'PINA = 80 PINB: 50 PINC: 00 => PORTC: 130 = 10000010 = 0x82',
-        'steps': [{'inputs': [('PINA', 0x50), ('PINB', 0x32), ('PINC', 0x00)], 'iterations': 1} ],
-        'expected': [('PORTD', 0x82)],
+        {'description': 'PINA = 40 PINB: 40 PINC: 40 => PORTC: 120 = 10000010 = 0x31',
+        'steps': [{'inputs': [('PINA', 0x40), ('PINB', 0x40), ('PINC', 0x40)], 'iterations': 1} ],
+        'expected': [('PORTD', 0x31)],
         },
 ]
 
