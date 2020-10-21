@@ -30,7 +30,7 @@ int main(void) {
 	tmp = 0;
 
 	totWeight = PINA + PINB + PINC;
-	tmp  = totWeight & 0xFC;
+	tmp  = totWeight >> 2;
 	
 
 	if(totWeight > 140){
